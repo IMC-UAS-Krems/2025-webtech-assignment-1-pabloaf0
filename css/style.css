@@ -1,0 +1,594 @@
+/* === base === */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: grey;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  color: royalblue;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page_box {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+body {
+  font: 16px/1.7 system-ui, sans-serif;
+}
+
+/* === header === */
+.web_header {
+  background: white;
+  border-bottom: 2px solid red;
+  padding: 12px 0;
+  position: sticky; /* == this sticky position is something new i had to ask for it == */
+  top: 0;
+}
+.name_box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+.name_photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid red;
+  object-fit: cover;
+}
+.web_header .page_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.web_menu {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.web_menu a {
+  color: darkslategray;
+  padding: 6px 8px;
+  border-radius: 60px;
+  font-weight: 500;
+}
+.web_menu a:hover {
+  background: red;
+  color: white;
+}
+
+/* === index hero (HOME) === */
+.web_main {
+  padding: 28px 0 40px;
+}
+.main_block {
+  background: white;
+  border: 1px solid lightcoral;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.main_block_grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .main_block_grid {
+    grid-template-columns: 1fr;
+  }
+}
+.main_block_photo {
+  height: auto;
+}
+.main_block_photo img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border: 2px solid red;
+  border-radius: 12px;
+}
+.main_block_photo figcaption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 6px;
+  color: red;
+}
+
+/* === text === */
+h1,
+h2 {
+  color: red;
+}
+p,
+li,
+td,
+th {
+  text-align: justify;
+}
+
+/* === table (home) === */
+.info_table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 16px;
+  background: red;
+  color: white;
+}
+.info_table th,
+.info_table td {
+  border: 1px solid white;
+  padding: 10px 12px;
+}
+
+/* === GALLERY (yellow) === */
+
+.photo_feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+@media (max-width: 900px) {
+  .photo_feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .photo_feed {
+    grid-template-columns: 1fr;
+  }
+}
+
+.photo_item {
+  background: white;
+  border: 1px solid gold;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.photo_item a {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+.photo_item a img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo_caption {
+  margin: 8px 10px 10px;
+  font-size: .95rem;
+  text-align: justify;
+  color: goldenrod;
+}
+
+/* === lightbox === */
+
+.photo_lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  z-index: 100;
+}
+.photo_lightbox:target {
+  display: block;
+}
+.photo_lightbox img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 92vw;
+  max-height: 86vh;
+  border: 3px solid white;
+  border-radius: 8px;
+}
+.photo_lightbox_close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+/* === footer === */
+.web_footer {
+  border-top: 2px solid crimson;
+  background: white;
+  text-align: center;
+  color: firebrick;
+  padding: 18px 16px;
+  font-size: .9rem;
+}
+
+/* ===== ABOUT PAGE (green) ===== */
+.about_top_box {
+  padding: 16px;
+  background: honeydew;
+  border: 1px solid seagreen;
+  border-radius: 12px;
+}
+.about_title {
+  margin: 0 0 6px 0;
+  color: seagreen;
+}
+.about_subtitle {
+  margin: 0;
+  color: darkgreen;
+}
+
+.about_intro {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+.about_column p {
+  margin: 0 0 10px 0;
+}
+.about_column ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.about_column li {
+  margin: .35rem 0;
+  text-align: justify;
+}
+
+.about_highlights_box h2,
+.about_story_box h2,
+.about_questions h2 {
+  margin-top: 0;
+  color: seagreen;
+}
+.about_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.about_card {
+  background: white;
+  border: 1px solid seagreen;
+  border-radius: 12px;
+  padding: 14px;
+}
+.about_card h3 {
+  margin: 0 0 6px;
+  color: darkgreen;
+}
+
+.story_list {
+  list-style: none;
+  margin: 0;
+  padding-left: 14px;
+  border-left: 3px solid seagreen;
+}
+.story_list li {
+  margin: 14px 0;
+}
+.story_year {
+  font-weight: 700;
+  color: seagreen;
+  margin-bottom: 2px;
+}
+.story_text h4 {
+  margin: 0 0 4px;
+  color: darkgreen;
+}
+.story_text p {
+  margin: 0;
+  text-align: justify;
+}
+
+.about_questions details {
+  background: white;
+  border: 1px solid seagreen;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 8px 0;
+}
+.about_questions summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: darkgreen;
+}
+.about_questions summary:hover {
+  color: mediumseagreen;
+}
+.about_questions details p {
+  margin: 8px 0 0;
+  text-align: justify;
+}
+
+@media (max-width: 900px) {
+  .about_intro {
+    grid-template-columns: 1fr;
+  }
+  .about_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .about_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== CV PAGE (purple) ===== */
+.cv_head_box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  border: 1px solid silver;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.cv_photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid mediumvioletred;
+  object-fit: cover;
+}
+.cv_head_box h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: mediumvioletred;
+}
+
+.cv_head_box p {
+  margin: 4px 0;
+}
+.cv_head_box h1::after {
+  content: " ✦";
+  color: mediumvioletred;
+}
+
+.cv_section {
+  background: white;
+  border: 1px solid silver;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-top: 3px double mediumvioletred;
+  margin-top: 18px;
+  padding-top: 14px;
+}
+.cv_section h2 {
+  border-bottom: 2px solid mediumvioletred;
+  padding-bottom: 4px;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  color: mediumvioletred;
+  font-style: italic;
+}
+.cv_item {
+  margin-bottom: 16px;
+}
+.cv_item h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: darkslategray;
+  font-weight: 600;
+}
+.cv_item h3 span {
+  float: right;
+  font-weight: normal;
+  color: dimgray;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.cv_item p,
+.cv_item li {
+  text-align: justify;
+}
+.cv_item ul {
+  margin: 4px 0 8px 18px;
+  list-style-type: "• ";
+  font-style: italic;
+}
+.cv_item li {
+  margin-bottom: 4px;
+}
+.cv_item h3:hover {
+  color: mediumvioletred;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .cv_head_box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cv_photo {
+    width: 100px;
+    height: 100px;
+  }
+  .cv_item h3 span {
+    float: none;
+    display: block;
+    margin-top: 2px;
+  }
+}
+
+/* ===== GALLERY PAGE (yellow) ===== */
+.photo_feed {
+  background: lightyellow;
+}
+.photo_item {
+  border-color: gold;
+}
+h1.gallery_title,
+h2.gallery_title {
+  color: goldenrod;
+}
+.web_footer.gallery_footer {
+  border-top-color: goldenrod;
+  color: goldenrod;
+}
+
+/* === yellow box=== */
+.gallery_top_box {
+  border: 1px solid gold;
+}
+
+.gallery_top_box h1,
+.gallery_top_box h2 {
+  color: goldenrod;
+}
+
+
+
+/* ===== GALLERY PAGE (green) ===== */
+
+.hobbies_top_box {
+  padding: 16px;
+}
+.hobbies_title {
+  margin: 6px;
+  color: navy;
+}
+.hobbies_subtitle {
+  margin: 0;
+  color: grey;
+}
+
+/* Each row */
+.hobby_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: white;
+  border: 1px solid white;
+  border-radius: 12px;
+  margin: 20px 0;
+  padding: 16px;
+}
+.hobby_row.row_flip {
+  flex-direction: row-reverse; /* it changes text */
+}
+
+/* the image */
+.hobby_image img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+/* text */
+.hobby_text {
+  flex: 1;
+}
+.hobby_text h2 {
+  margin: 6px;
+  color: navy;
+}
+.hobby_text p {
+  text-align: justify;
+}
+
+/* to make it responsive */
+@media (max-width: 800px) {
+  .hobby_row,
+  .hobby_row.row_flip {
+    flex-direction: column;
+  }
+  .hobby_image img {
+    max-width: 100%;
+  }
+}
+
+/* ===== CONTACT PAGE (green) ===== */
+.contact_wrap { display: flex; justify-content: center; }
+.contact_card {
+  width: 100%;
+  max-width: 520px;
+  margin: 12px auto;
+  background: honeydew;
+  border: 2px solid darkslategray;
+  border-radius: 8px;
+  padding: 16px 16px 16px;
+}
+.contact_card_head h1 {
+  margin: 8px 6px;
+  font-size: 1.4rem;
+  color: darkslategray;
+  text-align: left;
+}
+.contact_rule { border: 0; border-top: 2px solid darkslategray; margin: 12px; }
+.contact_form { display: grid; gap: 10px; }
+.contact_form label { font-weight: 600; color: darkslategray; }
+.contact_form input, .contact_form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid darkslategray;
+  border-radius: 6px;
+  font: inherit;
+  background: white;
+  color: darkslategray;
+}
+.contact_form input:focus, .contact_form textarea:focus {
+  outline: 2px solid mediumvioletred;
+  border-color: mediumvioletred;
+}
+.contact_bar {
+  margin: 14px -16px -16px;
+  padding: 10px 16px;
+  background: darkslategray;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.contact_button {
+  border: 1px solid white;
+  background: white;
+  color: darkslategray;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.contact_button_light {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+@media (max-width: 560px) {
+  .contact_card { max-width: 94%; }
+}
+
+
+

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pablo Aguilar Fernández : Contact</title>
+  <meta name="description" content="Contact page for Pablo Aguilar Fernández." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="web_header">
+    <div class="page_box">
+      <div class="name_box">
+        <img src="images/pablo.jpg" alt="Photo of Pablo Aguilar Fernández" class="name_photo" />
+        <a href="index.html">Pablo Aguilar Fernández</a>
+      </div>
+
+      <nav class="web_menu" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="cv.html">CV</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="web_main page_box">
+    <!-- it establish the contact card in the middle -->
+    <section class="contact_wrap">
+      <article class="contact_card" aria-labelledby="contact_title">
+        <header class="contact_card_head">
+          <h1 id="contact_title">Contact</h1>
+          <hr class="contact_rule" />
+        </header>
+
+        <!-- form to introduce everything -->
+        <form class="contact_form" action="mailto:bleras00@gmail.com" method="post" enctype="text/plain">
+          <label for="name">Full name</label>
+          <input id="name" name="Name" type="text" required placeholder="Your name" />
+
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" required placeholder="you@example.com" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" rows="6" required placeholder="Write your message here"></textarea>
+
+          <!-- the bottom line of the site -->
+          <div class="contact_bar">
+            <button type="submit" class="contact_button">Send</button>
+            <button type="reset" class="contact_button contact_button_light">Clear</button>
+          </div>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer class="web_footer">
+    <div class="page_box">
+      <p>© 2025 Pablo Aguilar Fernández · <a href="mailto:bleras00@gmail.com">bleras00@gmail.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
